@@ -14,7 +14,7 @@ input_skin_base($height) {
     line-height:  normal;
     cursor: text;
 
-    transition:box-shadow .05s ease-out; /* анимация желтой фокусной рамки */
+    transition: box-shadow .05s ease-out; /* анимация желтой фокусной рамки */
 
     &._focused {
         outline: 0;
@@ -91,10 +91,12 @@ input_skin_base($height) {
         height: $height;
         vertical-align: middle;
 
+        background: url('images/clear-14.png') 50% 50% no-repeat;
         cursor: pointer;
         opacity: (ie != 8) ? 0.3 : 1;
 
         &:hover {
+            background-image: url('images/clear-14-hover.png');
             opacity: 1;
         }
 

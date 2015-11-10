@@ -1,14 +1,19 @@
 module.exports = function (bt) {
+    bt.setDefaultView('input', 'large');
 
     bt.match('input*', function (ctx) {
         ctx.enableAutoInit();
 
+        var value = ctx.getParam('value');
+        var name = ctx.getParam('name');
+        var placeholder = ctx.getParam('placeholder');
+
         ctx.setContent([
             {
                 elem: 'control',
-                inputValue: ctx.getParam('value'),
-                inputName: ctx.getParam('name'),
-                placeholder: ctx.getParam('placeholder')
+                inputValue: value,
+                inputName: name,
+                placeholder: placeholder
             },
             {
                 elem: 'clear'
