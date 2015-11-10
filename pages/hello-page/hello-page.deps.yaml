@@ -3,3 +3,5 @@
   elem: auto-init
 - input
 - form
+- block: i18n
+  keyset: form

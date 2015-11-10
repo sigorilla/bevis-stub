@@ -1,7 +1,7 @@
 modules.define(
     'form',
-    ['inherit', 'block', 'input'],
-    function (provide, inherit, YBlock, Input) {
+    ['inherit', 'block', 'input', 'y-i18n'],
+    function (provide, inherit, YBlock, Input, i18n) {
         var form = inherit(YBlock, {
             __constructor: function () {
                 this.__base.apply(this, arguments);
@@ -10,11 +10,18 @@ modules.define(
 
                 this._greetingInput = new Input({
                     name: 'loginField',
-                    placeholder: 'Введите ваше имя',
+                    placeholder: i18n('form', 'hint-login'),
                     parentNode: formDomNode
                 });
-
                 this._greetingInput.on('input-submitted', this._onInputSubmitted, this);
+
+                this._passwordInput = new Input({
+                    name: 'passwordField',
+                    type: 'password',
+                    placeholder: i18n('form', 'hint-content'),
+                    parentNode: formDomNode
+                });
+                this._passwordInput.on('input-submitted', this._onInputSubmitted, this);
             },
 
             /**

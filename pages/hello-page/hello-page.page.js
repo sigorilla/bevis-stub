@@ -12,7 +12,8 @@ module.exports = function (pages) {
             ],
             body: [
                 {
-                    block: 'form'
+                    block: 'form',
+                    titleText: pages.i18n('form', 'title-text')
                 }
             ]
         };

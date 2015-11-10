@@ -4,16 +4,13 @@ module.exports = function (bt) {
     bt.match('input*', function (ctx) {
         ctx.enableAutoInit();
 
-        var value = ctx.getParam('value');
-        var name = ctx.getParam('name');
-        var placeholder = ctx.getParam('placeholder');
-
         ctx.setContent([
             {
                 elem: 'control',
-                inputValue: value,
-                inputName: name,
-                placeholder: placeholder
+                inputValue: ctx.getParam('value'),
+                inputName: ctx.getParam('name'),
+                inputType: ctx.getParam('type') || 'text',
+                placeholder: ctx.getParam('placeholder')
             },
             {
                 elem: 'clear'
@@ -26,10 +23,12 @@ module.exports = function (bt) {
 
         var currentValue = ctx.getParam('inputValue');
         var currentName = ctx.getParam('inputName');
+        var currentType = ctx.getParam('inputType');
         var currentPlaceholder = ctx.getParam('placeholder');
 
         ctx.setAttr('value', currentValue);
         ctx.setAttr('name', currentName);
+        ctx.setAttr('type', currentType);
         ctx.setAttr('placeholder', currentPlaceholder);
     });
 
