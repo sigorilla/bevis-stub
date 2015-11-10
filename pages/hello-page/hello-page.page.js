@@ -12,15 +12,7 @@ module.exports = function (pages) {
             ],
             body: [
                 {
-                    block: 'input',
-                    name: 'text',
-                    placeholder: 'Enter text here'
-                },
-                {
-                    block: 'input',
-                    view: 'small',
-                    name: 'text',
-                    placeholder: 'Small input'
+                    block: 'form'
                 }
             ]
         };
